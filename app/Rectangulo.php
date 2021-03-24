@@ -10,8 +10,8 @@ class Rectangulo extends FiguraGeometrica{
 
     protected function CalcularDatos()
 	{
-		$this->_superficie = 0;
-		$this->_perimetro = 0;
+		$this->_superficie = ($this->_ladoDos + $this->_ladoUno) * 2;
+		$this->_perimetro = $this->_ladoDos * $this->_ladoUno;
 	}
 
     public function __construct($l2,$l1){
@@ -23,10 +23,18 @@ class Rectangulo extends FiguraGeometrica{
     }
 
     public function Dibujar(){
-        $dibujo = "";
-        for ($i=0; $i <$this->_ladoUno; $i++) { 
-            $dibujo = "*";
+        $dibujo="";
+        for ($i=0; $i <$this->_ladoUno;$i++) { 
+            for ($j=0; $j < $this->_ladoDos; $j++){
+                $dibujo .= "*"; 
+           }
+           $dibujo .= "<br>";
         }
         return $dibujo;
+    }
+
+    public function ToString()
+    {
+        return parent::ToString() . $this->Dibujar();
     }
 }

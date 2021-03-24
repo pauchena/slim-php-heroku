@@ -10,8 +10,8 @@ class Triangulo extends FiguraGeometrica{
 
     protected function CalcularDatos()
 	{
-		$this->_superficie = 0;
-		$this->_perimetro = 0;
+		$this->_superficie = ($this->_base * $this->_altura)/2;
+		$this->_perimetro = $this->_base + $this->_altura ;
 	}
 
     public function __construct($b,$h){
@@ -24,10 +24,19 @@ class Triangulo extends FiguraGeometrica{
 
     public function Dibujar(){
         $dibujo = "";
+        $asteriscos = "";
         for ($i=0; $i <$this->_altura; $i++) { 
-            $dibujo = "*";
-            echo "$dibujo <br/>";
+            for ($j=0; $j <=$i*2; $j++){
+                $asteriscos .= "* "; 
+           }
+           $asteriscos .="<br>";
+           $dibujo= "<br>" . $asteriscos ;
         }
         return $dibujo;
+    }
+
+    public function ToString()
+    {
+        return parent::ToString() . $this->Dibujar();
     }
 }
