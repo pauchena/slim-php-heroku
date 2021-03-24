@@ -23,16 +23,14 @@ class Triangulo extends FiguraGeometrica{
     }
 
     public function Dibujar(){
-        $dibujo = "";
-        $asteriscos = "";
-        for ($i=0; $i <$this->_altura; $i++) { 
-            for ($j=0; $j <=$i*2; $j++){
-                $asteriscos .= "* "; 
-           }
-           $asteriscos .="<br>";
-           $dibujo= "<br>" . $asteriscos ;
+        for($i=1;$i<=$this->_altura;$i++){ //vertical
+          
+            for($j=1;$j<=$i;$j++){//horizontal
+                echo ' *'; 
+            
+            }
+            echo '<br/>';
         }
-        return $dibujo;
     }
 
     public function ToString()
