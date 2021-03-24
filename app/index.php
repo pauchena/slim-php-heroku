@@ -1,28 +1,15 @@
 <?php
-use \Psr\Http\Message\ServerRequestInterface as Request;
-use \Psr\Http\Message\ResponseInterface as Response;
-use App\Clases\FiguraGeometrica;
 
-require_once '../vendor/autoload.php';
+include_once "Rectangulo.php";
+include_once "Triangulo.php";
+$altura = 10;
+$rectangulo = new Rectangulo($altura,5);
+$triangulo = new Triangulo(5,5);
 
+$dibujar = $rectangulo ->Dibujar();
 
+for ($i=0; $i < $altura; $i++) { 
+   echo $dibujar;
+}
 
-$app = new \Slim\App([]);
-
-
-
-$app->get('[/]', function (Request $request, Response $response) {    
-    $response->getBody()->write("GET => Bienvenido!!! ,a SlimFramework");
-    return $response;
-
-});
-
-
-$app->get('/ejercicio15', function ($request, $response, $args) {
-    // Show book identified by $args['id']
-    // ...
-    
-    return $response;
-});
-
-$app->run();
+echo $rectangulo -> ToString();

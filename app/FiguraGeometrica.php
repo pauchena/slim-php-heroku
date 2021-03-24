@@ -11,7 +11,6 @@ abstract class FiguraGeometrica
     //metodos
     public function __construct()
     {
-        $this -> _color = "";
         $this -> _perimetro = 0.0;
         $this -> _superfice = 0.0;
     }
