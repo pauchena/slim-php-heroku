@@ -31,7 +31,7 @@ abstract class FiguraGeometrica
 
     public function ToString()
 	{
-		return "Perimetro: " . $this->_perimetro . "Superficie: " . $this->_superficie . "<br/>";	
+		return "Perimetro: $this->_perimetro  Superficie: $this->_superficie  Color: $this->getColor() <br/>";	
 	}
 
 }

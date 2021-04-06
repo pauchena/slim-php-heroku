@@ -26,12 +26,13 @@ class Triangulo extends FiguraGeometrica{
         for($i=1;$i<=$this->_altura;$i++){ //vertical
           
             for($j=1;$j<=$i;$j++){//horizontal
-                echo ' *'; 
+                echo '&nbsp*'; 
             
             }
             echo '<br/>';
         }
     }
+
 
     public function ToString()
     {
