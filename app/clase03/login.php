@@ -31,19 +31,17 @@ if(isset($_POST['pass']) && isset($_POST['mail']))
                 echo"No existe el usuario";
                 break;
             case 0:
-                echo"Error en campos recibidos";
+                echo"Datos invalidos";
                 break;
             default:
                 echo"Verificado";
-                 break;
-        
+                break;
         }
 
 
 }
 else
-    echo"Complete los campos pass y mail."
-
+    echo "Ingrese pass y mail";
 
 
 ?>
