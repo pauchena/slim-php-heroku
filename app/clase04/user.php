@@ -9,6 +9,7 @@ class User{
 
     public function __construct(string $name, string $pass, string $mail, string $path)
     {
+      $this->id =rand(1,10000);
       $this->name=$name;
       $this->pass=$pass;
       $this->mail=$mail;
