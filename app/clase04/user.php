@@ -139,8 +139,7 @@ class User{
         }
     
         public static function SaveToJson(User $user){
-            $nameFile="user.json";
-            $file = fopen($nameFile, 'a');
+            $file = fopen("user.json", "a");
             fwrite($file,json_encode($user)."\n");
             fclose($file);
         }
