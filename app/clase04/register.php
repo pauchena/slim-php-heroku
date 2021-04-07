@@ -21,14 +21,14 @@ include_once "user.php";
     $pass=$_POST["pass"];
     $mail=$_POST["mail"];
 
-    $nameFile= $_FILES["img"];
+    $nameFile= $_FILES["img"]["name"];
 
     if(isset($name)&& isset($pass) && isset($mail)){
 
         $extensionFile=pathinfo($file,PATHINFO_EXTENSION);
         $dest ="User/img/".$mail. "." . $extensionFile;
         if(!file_exists(($dest))){
-            move_uploaded_file($_FILES["img"]["tmp"],$dest);
+            move_uploaded_file($_FILES["img"]["tmp_name"],$dest);
             $user = new User($name,$pass,$mail,$dest);
             if(User::SaveToJson($user))
                 echo "Se dio de alta el usuario con la foto";
