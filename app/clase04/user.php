@@ -14,6 +14,7 @@ class User{
       $this->pass=$pass;
       $this->mail=$mail;
       $this->path = $path;
+      $this->date = date("d/m/y");
     }
 
 
